@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ListFormatoDeEvolucionTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:form styleClass="jsfcrud_list_form">
+                <h:panelGroup id="messagePanel" layout="block">
+                    <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+                </h:panelGroup>
+                <h:outputText escape="false" value="#{bundle.ListFormatoDeEvolucionEmpty}" rendered="#{formatoDeEvolucionController.items.rowCount == 0}"/>
+                <h:panelGroup rendered="#{formatoDeEvolucionController.items.rowCount > 0}">
+                    <h:outputText value="#{formatoDeEvolucionController.pagination.pageFirstItem + 1}..#{formatoDeEvolucionController.pagination.pageLastItem + 1}/#{formatoDeEvolucionController.pagination.itemsCount}"/>&nbsp;
+                    <h:commandLink action="#{formatoDeEvolucionController.previous}" value="#{bundle.Previous} #{formatoDeEvolucionController.pagination.pageSize}" rendered="#{formatoDeEvolucionController.pagination.hasPreviousPage}"/>&nbsp;
+                    <h:commandLink action="#{formatoDeEvolucionController.next}" value="#{bundle.Next} #{formatoDeEvolucionController.pagination.pageSize}" rendered="#{formatoDeEvolucionController.pagination.hasNextPage}"/>&nbsp;
+                    <h:dataTable value="#{formatoDeEvolucionController.items}" var="item" border="0" cellpadding="2" cellspacing="0" rowClasses="jsfcrud_odd_row,jsfcrud_even_row" rules="all" style="border:solid 1px">
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListFormatoDeEvolucionTitle_idFormatodeevolucioncol}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.idFormatodeevolucioncol}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListFormatoDeEvolucionTitle_fecha}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.fecha}">
+                                <f:convertDateTime pattern="MM/dd/yyyy" />
+                            </h:outputText>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListFormatoDeEvolucionTitle_hora}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.hora}">
+                                <f:convertDateTime pattern="HH:mm:ss" />
+                            </h:outputText>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListFormatoDeEvolucionTitle_localizacion}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.localizacion}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="&nbsp;"/>
+                            </f:facet>
+                            <h:commandLink action="#{formatoDeEvolucionController.prepareView}" value="#{bundle.ListFormatoDeEvolucionViewLink}"/>
+                            <h:outputText value=" "/>
+                            <h:commandLink action="#{formatoDeEvolucionController.prepareEdit}" value="#{bundle.ListFormatoDeEvolucionEditLink}"/>
+                            <h:outputText value=" "/>
+                            <h:commandLink action="#{formatoDeEvolucionController.destroy}" value="#{bundle.ListFormatoDeEvolucionDestroyLink}"/>
+                        </h:column>
+                    </h:dataTable>
+                </h:panelGroup>
+                <br />
+                <h:commandLink action="#{formatoDeEvolucionController.prepareCreate}" value="#{bundle.ListFormatoDeEvolucionCreateLink}"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.ListFormatoDeEvolucionIndexLink}"/>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ViewTrabajadorTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputText value="#{bundle.ViewTrabajadorLabel_idTrabajador}"/>
+                    <h:outputText value="#{trabajadorController.selected.idTrabajador}" title="#{bundle.ViewTrabajadorTitle_idTrabajador}"/>
+                    <h:outputText value="#{bundle.ViewTrabajadorLabel_turnotrabajador}"/>
+                    <h:outputText value="#{trabajadorController.selected.turnotrabajador}" title="#{bundle.ViewTrabajadorTitle_turnotrabajador}"/>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{trabajadorController.destroyAndView}" value="#{bundle.ViewTrabajadorDestroyLink}"/>
+                <br />
+                <br />
+                <h:link outcome="Edit" value="#{bundle.ViewTrabajadorEditLink}"/>
+                <br />
+                <h:commandLink action="#{trabajadorController.prepareCreate}" value="#{bundle.ViewTrabajadorCreateLink}" />
+                <br />
+                <h:commandLink action="#{trabajadorController.prepareList}" value="#{bundle.ViewTrabajadorShowAllLink}"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.ViewTrabajadorIndexLink}"/>
+
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>
