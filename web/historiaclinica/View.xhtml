@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ViewHistoriaclinicaTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputText value="#{bundle.ViewHistoriaclinicaLabel_idHistoriaClinica}"/>
+                    <h:outputText value="#{historiaclinicaController.selected.idHistoriaClinica}" title="#{bundle.ViewHistoriaclinicaTitle_idHistoriaClinica}"/>
+                    <h:outputText value="#{bundle.ViewHistoriaclinicaLabel_tratamientoidTratamiento}"/>
+                    <h:outputText value="#{historiaclinicaController.selected.tratamientoidTratamiento}" title="#{bundle.ViewHistoriaclinicaTitle_tratamientoidTratamiento}"/>
+                    <h:outputText value="#{bundle.ViewHistoriaclinicaLabel_diagnosticoidDiagnostico}"/>
+                    <h:outputText value="#{historiaclinicaController.selected.diagnosticoidDiagnostico}" title="#{bundle.ViewHistoriaclinicaTitle_diagnosticoidDiagnostico}"/>
+                    <h:outputText value="#{bundle.ViewHistoriaclinicaLabel_trabajadoridTrabajador}"/>
+                    <h:outputText value="#{historiaclinicaController.selected.trabajadoridTrabajador}" title="#{bundle.ViewHistoriaclinicaTitle_trabajadoridTrabajador}"/>
+                    <h:outputText value="#{bundle.ViewHistoriaclinicaLabel_formatodeevolucionidFormatodeevolucioncol}"/>
+                    <h:outputText value="#{historiaclinicaController.selected.formatodeevolucionidFormatodeevolucioncol}" title="#{bundle.ViewHistoriaclinicaTitle_formatodeevolucionidFormatodeevolucioncol}"/>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{historiaclinicaController.destroyAndView}" value="#{bundle.ViewHistoriaclinicaDestroyLink}"/>
+                <br />
+                <br />
+                <h:link outcome="Edit" value="#{bundle.ViewHistoriaclinicaEditLink}"/>
+                <br />
+                <h:commandLink action="#{historiaclinicaController.prepareCreate}" value="#{bundle.ViewHistoriaclinicaCreateLink}" />
+                <br />
+                <h:commandLink action="#{historiaclinicaController.prepareList}" value="#{bundle.ViewHistoriaclinicaShowAllLink}"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.ViewHistoriaclinicaIndexLink}"/>
+
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>
