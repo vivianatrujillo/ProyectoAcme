@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.CreateHistoriaclinicaTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.CreateHistoriaclinicaLabel_idHistoriaClinica}" for="idHistoriaClinica" />
+                    <h:inputText id="idHistoriaClinica" value="#{historiaclinicaController.selected.idHistoriaClinica}" title="#{bundle.CreateHistoriaclinicaTitle_idHistoriaClinica}" required="true" requiredMessage="#{bundle.CreateHistoriaclinicaRequiredMessage_idHistoriaClinica}"/>
+                    <h:outputLabel value="#{bundle.CreateHistoriaclinicaLabel_diagnosticoidDiagnostico}" for="diagnosticoidDiagnostico" />
+                    <h:selectOneMenu id="diagnosticoidDiagnostico" value="#{historiaclinicaController.selected.diagnosticoidDiagnostico}" title="#{bundle.CreateHistoriaclinicaTitle_diagnosticoidDiagnostico}" required="true" requiredMessage="#{bundle.CreateHistoriaclinicaRequiredMessage_diagnosticoidDiagnostico}">
+                        <f:selectItems value="#{diagnosticoController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                    <h:outputLabel value="#{bundle.CreateHistoriaclinicaLabel_formatodeevolucionidFormatodeevolucioncol}" for="formatodeevolucionidFormatodeevolucioncol" />
+                    <h:selectOneMenu id="formatodeevolucionidFormatodeevolucioncol" value="#{historiaclinicaController.selected.formatodeevolucionidFormatodeevolucioncol}" title="#{bundle.CreateHistoriaclinicaTitle_formatodeevolucionidFormatodeevolucioncol}" required="true" requiredMessage="#{bundle.CreateHistoriaclinicaRequiredMessage_formatodeevolucionidFormatodeevolucioncol}">
+                        <f:selectItems value="#{formatoDeEvolucionController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                    <h:outputLabel value="#{bundle.CreateHistoriaclinicaLabel_trabajadoridTrabajador}" for="trabajadoridTrabajador" />
+                    <h:selectOneMenu id="trabajadoridTrabajador" value="#{historiaclinicaController.selected.trabajadoridTrabajador}" title="#{bundle.CreateHistoriaclinicaTitle_trabajadoridTrabajador}" required="true" requiredMessage="#{bundle.CreateHistoriaclinicaRequiredMessage_trabajadoridTrabajador}">
+                        <f:selectItems value="#{trabajadorController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                    <h:outputLabel value="#{bundle.CreateHistoriaclinicaLabel_tratamientoidTratamiento}" for="tratamientoidTratamiento" />
+                    <h:selectOneMenu id="tratamientoidTratamiento" value="#{historiaclinicaController.selected.tratamientoidTratamiento}" title="#{bundle.CreateHistoriaclinicaTitle_tratamientoidTratamiento}" required="true" requiredMessage="#{bundle.CreateHistoriaclinicaRequiredMessage_tratamientoidTratamiento}">
+                        <f:selectItems value="#{tratamientoController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{historiaclinicaController.create}" value="#{bundle.CreateHistoriaclinicaSaveLink}" />
+                <br />
+                <br />
+                <h:commandLink action="#{historiaclinicaController.prepareList}" value="#{bundle.CreateHistoriaclinicaShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.CreateHistoriaclinicaIndexLink}"/>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

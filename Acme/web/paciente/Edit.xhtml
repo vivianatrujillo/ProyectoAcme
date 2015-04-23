@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.EditPacienteTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.EditPacienteLabel_idPaciente}" for="idPaciente" />
+                    <h:inputText id="idPaciente" value="#{pacienteController.selected.idPaciente}" title="#{bundle.EditPacienteTitle_idPaciente}" required="true" requiredMessage="#{bundle.EditPacienteRequiredMessage_idPaciente}"/>
+                    <h:outputLabel value="#{bundle.EditPacienteLabel_estadocivil}" for="estadocivil" />
+                    <h:inputText id="estadocivil" value="#{pacienteController.selected.estadocivil}" title="#{bundle.EditPacienteTitle_estadocivil}" required="true" requiredMessage="#{bundle.EditPacienteRequiredMessage_estadocivil}"/>
+                    <h:outputLabel value="#{bundle.EditPacienteLabel_nombre1}" for="nombre1" />
+                    <h:inputText id="nombre1" value="#{pacienteController.selected.nombre1}" title="#{bundle.EditPacienteTitle_nombre1}" required="true" requiredMessage="#{bundle.EditPacienteRequiredMessage_nombre1}"/>
+                    <h:outputLabel value="#{bundle.EditPacienteLabel_nombre2}" for="nombre2" />
+                    <h:inputText id="nombre2" value="#{pacienteController.selected.nombre2}" title="#{bundle.EditPacienteTitle_nombre2}" required="true" requiredMessage="#{bundle.EditPacienteRequiredMessage_nombre2}"/>
+                    <h:outputLabel value="#{bundle.EditPacienteLabel_apellido1}" for="apellido1" />
+                    <h:inputText id="apellido1" value="#{pacienteController.selected.apellido1}" title="#{bundle.EditPacienteTitle_apellido1}" required="true" requiredMessage="#{bundle.EditPacienteRequiredMessage_apellido1}"/>
+                    <h:outputLabel value="#{bundle.EditPacienteLabel_apellido2}" for="apellido2" />
+                    <h:inputText id="apellido2" value="#{pacienteController.selected.apellido2}" title="#{bundle.EditPacienteTitle_apellido2}" required="true" requiredMessage="#{bundle.EditPacienteRequiredMessage_apellido2}"/>
+                    <h:outputLabel value="#{bundle.EditPacienteLabel_telfijo}" for="telfijo" />
+                    <h:inputText id="telfijo" value="#{pacienteController.selected.telfijo}" title="#{bundle.EditPacienteTitle_telfijo}" required="true" requiredMessage="#{bundle.EditPacienteRequiredMessage_telfijo}"/>
+                    <h:outputLabel value="#{bundle.EditPacienteLabel_email}" for="email" />
+                    <h:inputText id="email" value="#{pacienteController.selected.email}" title="#{bundle.EditPacienteTitle_email}" required="true" requiredMessage="#{bundle.EditPacienteRequiredMessage_email}"/>
+                    <h:outputLabel value="#{bundle.EditPacienteLabel_direccion}" for="direccion" />
+                    <h:inputText id="direccion" value="#{pacienteController.selected.direccion}" title="#{bundle.EditPacienteTitle_direccion}" required="true" requiredMessage="#{bundle.EditPacienteRequiredMessage_direccion}"/>
+                    <h:outputLabel value="#{bundle.EditPacienteLabel_fechaNacimiento}" for="fechaNacimiento" />
+                    <h:inputText id="fechaNacimiento" value="#{pacienteController.selected.fechaNacimiento}" title="#{bundle.EditPacienteTitle_fechaNacimiento}" required="true" requiredMessage="#{bundle.EditPacienteRequiredMessage_fechaNacimiento}">
+                        <f:convertDateTime pattern="MM/dd/yyyy" />
+                    </h:inputText>
+                    <h:outputLabel value="#{bundle.EditPacienteLabel_numcelular}" for="numcelular" />
+                    <h:inputText id="numcelular" value="#{pacienteController.selected.numcelular}" title="#{bundle.EditPacienteTitle_numcelular}" required="true" requiredMessage="#{bundle.EditPacienteRequiredMessage_numcelular}"/>
+                    <h:outputLabel value="#{bundle.EditPacienteLabel_epsidEps}" for="epsidEps" />
+                    <h:selectOneMenu id="epsidEps" value="#{pacienteController.selected.epsidEps}" title="#{bundle.EditPacienteTitle_epsidEps}" required="true" requiredMessage="#{bundle.EditPacienteRequiredMessage_epsidEps}">
+                        <f:selectItems value="#{epsController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                    <h:outputLabel value="#{bundle.EditPacienteLabel_generoidGenero}" for="generoidGenero" />
+                    <h:selectOneMenu id="generoidGenero" value="#{pacienteController.selected.generoidGenero}" title="#{bundle.EditPacienteTitle_generoidGenero}" required="true" requiredMessage="#{bundle.EditPacienteRequiredMessage_generoidGenero}">
+                        <f:selectItems value="#{generoController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                    <h:outputLabel value="#{bundle.EditPacienteLabel_RHidRH}" for="RHidRH" />
+                    <h:selectOneMenu id="RHidRH" value="#{pacienteController.selected.RHidRH}" title="#{bundle.EditPacienteTitle_RHidRH}" required="true" requiredMessage="#{bundle.EditPacienteRequiredMessage_RHidRH}">
+                        <f:selectItems value="#{rhController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                    <h:outputLabel value="#{bundle.EditPacienteLabel_valoracionidValoracion}" for="valoracionidValoracion" />
+                    <h:selectOneMenu id="valoracionidValoracion" value="#{pacienteController.selected.valoracionidValoracion}" title="#{bundle.EditPacienteTitle_valoracionidValoracion}" required="true" requiredMessage="#{bundle.EditPacienteRequiredMessage_valoracionidValoracion}">
+                        <f:selectItems value="#{valoracionController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                </h:panelGrid>
+                <h:commandLink action="#{pacienteController.update}" value="#{bundle.EditPacienteSaveLink}"/>
+                <br />
+                <br />
+                <h:link outcome="View" value="#{bundle.EditPacienteViewLink}"/>
+                <br />
+                <h:commandLink action="#{pacienteController.prepareList}" value="#{bundle.EditPacienteShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.EditPacienteIndexLink}" />
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

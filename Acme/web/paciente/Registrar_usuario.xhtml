@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="./../layaut/Plantilla.xhtml">
+        <link rel="stylesheet" href="../Paginas/boosttrap/css/bootstrap.min.css"/>
+
+        <!-- Optional theme -->
+        <link rel="stylesheet" href="../Paginas/boosttrap/css/bootstrap-theme.min.css"/>
+
+            <!-- Latest compiled and minified JavaScript -->
+            <script src="../Paginas/boosttrap/js/bootstrap.min.js"></script>  
+
+            <link rel="stylesheet" href="../stylos.css"></link>
+           
+            <meta charset="utf-8"/>
+        <ui:define name="top">
+                top
+            </ui:define>
+        <ui:define name="content">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="Cedula paciente" for="Cedula Paciente" />
+                    <h:inputText id="idPaciente" value="#{pacienteController.selected.idPaciente}" title="#{bundle.CreatePacienteTitle_idPaciente}" required="true" requiredMessage="#{bundle.CreatePacienteRequiredMessage_idPaciente}"/>
+                    <h:outputLabel value="Estado Civil" for="estado civil" />
+                    <h:inputText id="estadocivil" value="#{pacienteController.selected.estadocivil}" title="#{bundle.CreatePacienteTitle_estadocivil}" required="true" requiredMessage="#{bundle.CreatePacienteRequiredMessage_estadocivil}"/>
+                    <h:outputLabel value="Primer Nombre" for="nombre1" />
+                    <h:inputText id="nombre1" value="#{pacienteController.selected.nombre1}" title="#{bundle.CreatePacienteTitle_nombre1}" required="true" requiredMessage="#{bundle.CreatePacienteRequiredMessage_nombre1}"/>
+                    <h:outputLabel value="Segundo Nombre" for="nombre2" />
+                    <h:inputText id="nombre2" value="#{pacienteController.selected.nombre2}" title="#{bundle.CreatePacienteTitle_nombre2}" required="false" requiredMessage="#{bundle.CreatePacienteRequiredMessage_nombre2}"/>
+                    <h:outputLabel value="Primer Apellido" for="apellido1" />
+                    <h:inputText id="apellido1" value="#{pacienteController.selected.apellido1}" title="#{bundle.CreatePacienteTitle_apellido1}" required="true" requiredMessage="#{bundle.CreatePacienteRequiredMessage_apellido1}"/>
+                    <h:outputLabel value="Segundo Apellido" for="apellido2" />
+                    <h:inputText id="apellido2" value="#{pacienteController.selected.apellido2}" title="#{bundle.CreatePacienteTitle_apellido2}" required="false" requiredMessage="#{bundle.CreatePacienteRequiredMessage_apellido2}"/>
+                    <h:outputLabel value="Telefono fijo" for="telfijo" />
+                    <h:inputText id="telfijo" value="#{pacienteController.selected.telfijo}" title="#{bundle.CreatePacienteTitle_telfijo}" required="false" requiredMessage="#{bundle.CreatePacienteRequiredMessage_telfijo}"/>
+                    <h:outputLabel value="E-mail" for="email" />
+                    <h:inputText id="email" value="#{pacienteController.selected.email}" title="#{bundle.CreatePacienteTitle_email}" required="true" requiredMessage="#{bundle.CreatePacienteRequiredMessage_email}"/>
+                    <h:outputLabel value="Direccion" for="direccion" />
+                    <h:inputText id="direccion" value="#{pacienteController.selected.direccion}" title="#{bundle.CreatePacienteTitle_direccion}" required="true" requiredMessage="#{bundle.CreatePacienteRequiredMessage_direccion}"/>
+                    <h:outputLabel value="Fecha Nacimiento" for="fechaNacimiento" />
+                    <h:inputText id="fechaNacimiento" value="#{pacienteController.selected.fechaNacimiento}" title="#{bundle.CreatePacienteTitle_fechaNacimiento}" required="true" requiredMessage="#{bundle.CreatePacienteRequiredMessage_fechaNacimiento}">
+                        <f:convertDateTime pattern="MM/dd/yyyy" />
+                    </h:inputText>
+                    <h:outputLabel value="Numero Celular" for="numcelular" />
+                    <h:inputText id="numcelular" value="#{pacienteController.selected.numcelular}" title="#{bundle.CreatePacienteTitle_numcelular}" required="true" requiredMessage="#{bundle.CreatePacienteRequiredMessage_numcelular}"/>
+                    <h:outputLabel value="Eps" for="epsidEps" />
+                    <h:selectOneMenu id="epsidEps" value="#{pacienteController.selected.epsidEps}" title="#{bundle.CreatePacienteTitle_epsidEps}" required="true" requiredMessage="#{bundle.CreatePacienteRequiredMessage_epsidEps}">
+                        <f:selectItems value="#{epsController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                    <h:outputLabel value="Genero" for="generoidGenero" />
+                    <h:selectOneMenu id="generoidGenero" value="#{pacienteController.selected.generoidGenero}" title="#{bundle.CreatePacienteTitle_generoidGenero}" required="true" requiredMessage="#{bundle.CreatePacienteRequiredMessage_generoidGenero}">
+                        <f:selectItems value="#{generoController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                    <h:outputLabel value="RH" for="RHidRH" />
+                    <h:selectOneMenu id="RHidRH" value="#{pacienteController.selected.RHidRH}" title="#{bundle.CreatePacienteTitle_RHidRH}" required="true" requiredMessage="#{bundle.CreatePacienteRequiredMessage_RHidRH}">
+                        <f:selectItems value="#{rhController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                    <h:outputLabel value="Valoracion" for="valoracionidValoracion" />
+                    <h:selectOneMenu id="valoracionidValoracion" value="#{pacienteController.selected.valoracionidValoracion}" title="#{bundle.CreatePacienteTitle_valoracionidValoracion}" required="true" requiredMessage="#{bundle.CreatePacienteRequiredMessage_valoracionidValoracion}">
+                        <f:selectItems value="#{valoracionController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                </h:panelGrid>
+                <br />
+                <h:commandButton action="#{pacienteController.create()}" value="#{bundle.CreatePacienteSaveLink}" />
+                <br />
+                <br />
+                <h:commandButton action="#{pacienteController.prepareList}" value="#{bundle.CreatePacienteShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:commandButton action="/index" value="#{bundle.CreatePacienteIndexLink}"/>
+                <br />
+                    <br />
+                    
+                    <h:commandButton action="#{pacienteController.create}" value="#{bundle.CreatePacienteSaveLink}"/>
+                    <h:commandButton value="Nuevo" action="#{pacienteController.prepareCreate}"/>
+                    
+            </h:form>
+        </ui:define>
+             <ui:define name="bottom">
+                <footer id="footer">
+                <table border="0" width="1400"  height="50" id="table1" >
+    <tr>
+      <td>
+      
+        <img src="../Paginas/imagenes/lk.jpg" alt="..." class="img-circle" width="115px"  height="115px" > 
+            <br>
+            <p style="font-family: 'kaushan+Script' , cursive ;font-size: 100%">
+              <a href="">luz karime diaz</a>
+              </p>
+            </br>
+      </img>
+      </td>
+      <td>
+<img src="../Paginas/imagenes/vl.jpg" alt="..." class="img-circle" width="115px"  height="115px">
+            <br>
+            <p style="font-family: 'kaushan+Script' , cursive ;font-size: 100%">
+              <a href="">viviana trujillo</a>
+              </p>
+            </br>   
+</img></td>
+      <td>
+<img src="../Paginas/imagenes/vic.jpg" alt="..." class="img-circle" width="115px"  height="115px">
+            <br>
+            <p style="font-family: 'kaushan+Script' , cursive ;font-size: 100%">
+              <a href="">victor chaguendo</a>
+              </p>
+            </br>   
+</img></td>
+<td>
+<img src="../Paginas/imagenes/yi.jpg" alt="..." class="img-circle" width="115px"  height="115px">
+            <br>
+            <p style="font-family: 'kaushan+Script' , cursive ;font-size: 100%">
+              <a href="">yisela grisales</a>
+              </p>
+            </br>  
+</img> </td>
+
+    </tr>
+ 
+   </table>  
+              </footer>
+                  
+     
+            </ui:define>
+    </ui:composition>
+
+</html>

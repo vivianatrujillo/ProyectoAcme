@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ListHistoriaclinicaTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:form styleClass="jsfcrud_list_form">
+                <h:panelGroup id="messagePanel" layout="block">
+                    <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+                </h:panelGroup>
+                <h:outputText escape="false" value="#{bundle.ListHistoriaclinicaEmpty}" rendered="#{historiaclinicaController.items.rowCount == 0}"/>
+                <h:panelGroup rendered="#{historiaclinicaController.items.rowCount > 0}">
+                    <h:outputText value="#{historiaclinicaController.pagination.pageFirstItem + 1}..#{historiaclinicaController.pagination.pageLastItem + 1}/#{historiaclinicaController.pagination.itemsCount}"/>&nbsp;
+                    <h:commandLink action="#{historiaclinicaController.previous}" value="#{bundle.Previous} #{historiaclinicaController.pagination.pageSize}" rendered="#{historiaclinicaController.pagination.hasPreviousPage}"/>&nbsp;
+                    <h:commandLink action="#{historiaclinicaController.next}" value="#{bundle.Next} #{historiaclinicaController.pagination.pageSize}" rendered="#{historiaclinicaController.pagination.hasNextPage}"/>&nbsp;
+                    <h:dataTable value="#{historiaclinicaController.items}" var="item" border="0" cellpadding="2" cellspacing="0" rowClasses="jsfcrud_odd_row,jsfcrud_even_row" rules="all" style="border:solid 1px">
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListHistoriaclinicaTitle_idHistoriaClinica}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.idHistoriaClinica}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListHistoriaclinicaTitle_diagnosticoidDiagnostico}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.diagnosticoidDiagnostico}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListHistoriaclinicaTitle_formatodeevolucionidFormatodeevolucioncol}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.formatodeevolucionidFormatodeevolucioncol}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListHistoriaclinicaTitle_trabajadoridTrabajador}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.trabajadoridTrabajador}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListHistoriaclinicaTitle_tratamientoidTratamiento}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.tratamientoidTratamiento}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="&nbsp;"/>
+                            </f:facet>
+                            <h:commandLink action="#{historiaclinicaController.prepareView}" value="#{bundle.ListHistoriaclinicaViewLink}"/>
+                            <h:outputText value=" "/>
+                            <h:commandLink action="#{historiaclinicaController.prepareEdit}" value="#{bundle.ListHistoriaclinicaEditLink}"/>
+                            <h:outputText value=" "/>
+                            <h:commandLink action="#{historiaclinicaController.destroy}" value="#{bundle.ListHistoriaclinicaDestroyLink}"/>
+                        </h:column>
+                    </h:dataTable>
+                </h:panelGroup>
+                <br />
+                <h:commandLink action="#{historiaclinicaController.prepareCreate}" value="#{bundle.ListHistoriaclinicaCreateLink}"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.ListHistoriaclinicaIndexLink}"/>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

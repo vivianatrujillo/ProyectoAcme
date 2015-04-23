@@ -1,0 +1,639 @@
+*{
+				margin:0px;
+				padding:0px;
+			}
+			
+			
+                        #header{
+                           position: relative;
+                           
+                        }			
+			ul, ol {
+				list-style:none;
+			}
+
+
+			header{
+				border-radius:0px;
+				background-color: #90b4bd;
+				position:absolute;
+                            
+			right:16%;
+				z-index: 1;
+                                margin:auto;
+				width:70%;
+                               
+               
+				font-family:Arial, Helvetica, sans-serif;
+                                
+			}
+                        #banner{
+                         position: absolute;
+                         top: 0px;
+                         left: 0px;
+                         right: 0px;
+                         width: 160%;
+                         height: 150px;
+  
+                        }
+			#tabla{
+			   width: 30%;
+                           border:"3"; 
+                           cellpadding:"100"; 
+                           cellspacing:"5";
+                           bordercolor:"#32A2DE";
+                           bgcolor:"#F5FAFB";
+			   top: 200%;
+			   left: 800%;
+				
+
+			}
+	
+                        #gmail{
+                            margin-left: 126%;
+                            position: absolute;
+                            top: 100px;
+                        }
+                        #face{
+                            margin-left: 123%;
+                            position: absolute;
+                            top: 100px;
+                        }
+                        #twiter{
+                            margin-left: 120%;
+                            position: absolute;
+                            top: 100px;
+                        }
+			
+			
+                        .nav{
+                            position: absolute;
+                            top: 140px;
+                            z-index: 2;
+                        }
+                        
+			.nav > li {
+				float:left;
+			}
+			
+			.nav li a {
+                            
+				background-color:#32A2DE;
+				color:blanchedalmond;
+				text-decoration:none;
+				padding:15px 85.7px ;
+				display:block;
+				border-right: 1px solid #FFFFFF;
+                                font-family:Comic Arial,Helvetica,sans-serif;
+                                position: relative;
+                                z-index:2;
+	                       
+	                     
+                                
+                                
+			}
+			
+			.nav li a:hover {
+				background-color:#434343;
+			}
+			
+			.nav li ul {
+				display:none;
+				position:absolute;
+				min-width:10px;
+                                z-index:2;
+			}
+			
+			.nav li:hover > ul {
+				display:block;
+			}
+			
+			.nav li ul li {
+				position:relative;
+                                z-index:2;
+			}
+			
+			.nav li ul li ul {
+				right:-140px;
+				top:0px;
+}
+
+body{
+  background: rgb(37,141,200); /* Old browsers */
+background: -moz-linear-gradient(top,  rgba(37,141,200,1) 31%, rgba(37,141,200,1) 81%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(31%,rgba(37,141,200,1)), color-stop(81%,rgba(37,141,200,1))); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  rgba(37,141,200,1) 31%,rgba(37,141,200,1) 81%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  rgba(37,141,200,1) 31%,rgba(37,141,200,1) 81%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  rgba(37,141,200,1) 31%,rgba(37,141,200,1) 81%); /* IE10+ */
+background: linear-gradient(to bottom,  rgba(37,141,200,1) 31%,rgba(37,141,200,1) 81%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#258dc8', endColorstr='#258dc8',GradientType=0 ); /* IE6-9 */
+
+    
+    
+}
+
+
+
+                        #wowslider-container1 {
+                           
+                            position:relative;
+                            top:205px;
+                            left: 5%;
+                            
+                           z-index: -1;
+                        }
+                        h4{
+                         position:absolute;
+                        top:300px;
+                        left:270px;
+                        color:#000;
+                        }
+                       //stilo de la imagen  ortodoncia
+                       .ORTO{
+                    
+
+                          position:absolute;
+                          top:100px;
+                          left:290px;
+                          width:730px;
+                          height:400px; 
+                        }
+                         //stilo de la imagen perodoncia 
+                        
+                        #pero{
+                          position: absolute;
+                          top:240px;
+                          left:280px;
+                          width:730px;
+                          height:400px
+                              
+                              
+                            
+                            
+                          //stilo de la imagen blanqueamiento 
+                   
+                        }
+                        #blanque{
+                            position: absolute;
+                          top:640px;
+                          left:280px;
+                          width:730px;
+                          height:400px
+                            
+                         ///stylo de la letra blanqueamiento  
+                        }
+                        
+                        #blanqueamiento{
+                         position:absolute;
+                        top:380px;
+                        left:270px;
+                        color:#000;
+                            
+                            
+                            
+                        }
+                       
+                        #endo{
+                          position: absolute;
+                          top:640px;
+                          left:280px;
+                          width:730px;
+                          height:400px
+                  
+                        }
+                        
+                         ///stylo de la letra endodoncia 
+                        
+                        #endodo{
+                         position:absolute;
+                        top:480px;
+                        left:270px;
+                        color:#000;
+        
+                        }
+                        
+                     
+                        #limp{
+                          position: absolute;
+                          top:590px;
+                          left:390px;
+                          width:700px;
+                          height:300px  
+                            
+                            
+                        }
+                   
+                        #limpieza{
+                         position:absolute;
+                        top:380px;
+                        left:270px;
+                        color:#000;
+                            
+                        }
+                        
+                        #odon{
+                             position: absolute;
+                          top:650px;
+                          left:390px;
+                          width:700px;
+                          height:300px
+                            
+                            
+                        }
+                        
+                        #odonto{
+                          position:absolute;
+                        top:810px;
+                        left:270px;
+                        color:#000;  
+                            
+                        }
+                        #footer{
+                          position: absolute;
+	                   padding:10px;
+                           top:700px
+	                   
+}
+
+
+.img-circle{
+  border-image:round;
+    width:115px;
+    height:115px;
+}   
+#table1{
+	background-color: #32A2DE;
+	position: absolute;
+	top:300px;
+	opacity:;  
+	left: 2px;
+	 border-collapse: separate;
+  border-spacing:;
+ }
+ form{
+     background-color:#tranparet;
+     border-radius: 700px;
+     box-shadow:;
+     position: absolute;  
+     top: 300px;
+     left:260px;
+     width: 600px;
+     height:400px;
+   
+     
+ } 
+ #Form_regis{
+   position: absolute;
+     top: 20px;
+     left:80px;
+     width: 600px;
+     height:400px;  
+ }
+ 
+ input{
+     border-radius: 7px;
+     width: 300px;
+     height: 20px;
+     
+ }
+
+ .form-group{
+     position: absolute;
+     top:200px;
+     left:180px; 
+     border-radius: 7px;
+     width:100px;
+     
+ }
+ .contra{
+    position: absolute;
+     top:250px; 
+     left:180px;
+     
+ }
+ .btn{
+     position: absolute;
+     top:300px;
+     left:150px;
+  
+    
+    
+   
+ }
+ #olvido{
+    position: absolute;
+     top:350px;
+     left:220px;
+     color:white;
+ }
+   #Valo1{
+           position: absolute;
+            top:170px; 
+            left:450px;
+                 }   
+                        
+                  #Valo2{
+            position: absolute;
+             top:350px; 
+            left:30px;    
+                        }
+                        
+                        #Valo3{
+                            position:absolute;
+                            top:300px; 
+                            left:30px  
+                        }
+                        
+                        #Valo4{
+                        position:absolute;
+                            top:330px; 
+                            left:1009px; 
+                        }
+                        
+                       #Valo5{
+                        position:absolute;
+                            top:430px; 
+                            left:390px;    
+                       }
+                       
+                       #Valo6{
+                        position:absolute;
+                            top:430px; 
+                            left:30px;   
+                       }
+                       
+                        #Valo7{
+                        position:absolute;
+                            top:790px; 
+                            left:10px; 
+                        }
+                            
+                         #Valo8{
+                        position:absolute;
+                            top:910px; 
+                            left:580px; 
+                        }  
+                        #historiak{
+                            position: absolute;
+                            top:200px; 
+                            left:900px;
+                            
+                        }
+                        #historia1{
+                            position: absolute;
+                            top:300px;
+                            left:150px;
+                            
+                            
+                        }
+                        #historia2{
+                            position: absolute;
+                            top:350px;
+                            left:150px;
+                            
+                        }
+                        #historia3{
+                            position: absolute;
+                            top:500px;
+                            left:150px;
+                            
+                        }
+                        #historia4{
+                            position: absolute;
+                            top:550px;
+                            left:150px;
+                            
+                            
+                        }
+                        #historia5{
+                            position: absolute;
+                            top:550px;
+                            left:750px;
+                    
+                        }
+                        
+                        #historia6{
+                            position: absolute;
+                            top:600px;
+                            left:150px;
+                            
+                            
+                            
+                        }
+                        #historia7{
+                            position: absolute;
+                            top:600px;
+                            left:750px;
+                            
+                        }
+                        #historia8{
+                            position: absolute;
+                            top:750px;
+                            left:150px;
+                            
+                        }
+                        #historia9{
+                            position: absolute;
+                            top:650px;
+                            left:750px;
+                            
+                        }
+                        #historia10{
+                            position: absolute;
+                            top:650px;
+                            left:150px;
+                            
+                        }
+                        #historia11{
+                            position: absolute;
+                            top:700px;
+                            left:750px;
+                            
+                        }
+                        #historia12{
+                            position: absolute;
+                            top:700px;
+                            left:150px;
+                            
+                        }
+                        #historia13{
+                            position: absolute;
+                            top:750px;
+                            left:750px;
+                            
+                        }
+                        #historia14{
+                            position: absolute;
+                            top:950px;
+                            left:150px;
+                        }
+                        #historia15{
+                            position: absolute;
+                            top:1000px;
+                            left:150px;
+                        }
+                        
+                         #historia16{
+                            position: absolute;
+                            top:1120px;
+                            left:100px;
+                        }
+                        
+                        #booton{
+                          position: absolute;
+                          top:1300px;
+                          left:350px;
+                          border-bottom:-200px;
+                          
+                        }
+                        
+#Opciones{
+                          position: absolute;
+                            top:150px; 
+                            left:530px;  
+                        }
+                        .bel{
+                            position: absolute;
+                            top:400px; 
+                            left:450px;
+                        }
+                            
+                        .buscar{
+                            position: absolute;
+                            top:240px; 
+                            left:180px;
+                        }
+                        #bt{
+                            position: absolute;
+                            top:300px; 
+                            left:180px;
+                        
+                   
+                        }
+                        #fondo1{
+	}
+                        
+                        #medio{
+                            position:absolute;
+                            top:400px;
+                            left:28%;
+                            height:400px;
+                            width:600px;
+                        } 
+                        #ambiente{
+                            position:absolute;
+                            top:800px;
+                            left:28%;
+                            height:400px;
+                            width:600px;
+                        } 
+                        #link{
+                            position:absolute;
+                            top:300px;
+                            left:32%; 
+                            color:black;
+                            font-family:Comic Arial,Helvetica,sans-serif;
+                        } 
+                        
+             
+                        #recuadro{
+                            
+                            background-color:#tranparet;
+                             border-radius: 700px;
+                             box-shadow: 0px 0px 2px rgba(0,0,0,0.4),0px 0px 4px white inset,2px 2px 2px rgba(0,0,0,0.2);
+                             position: absolute;
+                                top: 300px;
+                               left:260px;
+                                width: 600px;
+                                height: 1000px;
+                                
+   
+                            
+                        }
+                        #bella{
+                            position: absolute;
+                            top:340px; 
+                            left:450px;
+                            font-family:fantasy;
+                    
+                        }
+                        #bot{
+                             position: absolute;
+                            top:380px; 
+                            left:430px;
+                            
+                            
+                        }
+                        #mision{
+                            
+                            position: absolute;
+                            top:380px; 
+                            left:60px;
+                            font-family:sans-serif;
+                            font-size:20px;
+                            color: white;
+                            width:100%;
+                           
+                  
+                            
+                        }
+                        #tmision{
+                           border:2px solid;
+                           border-radius: 25px;
+                        }
+                        .res{
+                           position: absolute;
+                            top:300px; 
+                            left:380px;
+                            font-family:fantasy;
+                            font-size:20px   
+                            
+                        }
+                        .l{
+                             position: absolute;
+                            top:130px; 
+                            left:150px;
+                        }
+                        .ll{
+                            
+                             position: absolute;
+                            top:180px; 
+                            left:150px;
+                        }
+                        .lll{
+                             position: absolute;
+                            top:230px; 
+                            left:150px;
+                        }
+                        .llll{
+                             position: absolute;
+                            top:280px; 
+                            left:150px;
+                        }
+                        
+                         
+                        #Recuadro1{
+                          position: absolute;
+                          top:14em;
+                          margin: 50px auto;
+                          width: 715px;
+                          height: 120em;
+                          left: 14em; 
+                          
+                          border-radius: 93px 93px 93px 93px;
+                          -moz-border-radius: 13px 13px 13px 13px;
+                          -webkit-border:13px 13px 13px 13px;
+                          
+                          padding-bottom: 0px;
+                          background-color: rgba(68,112,213,0.1);
+                            
+                        }  
+                       
+                            
+                            
+                            
+                            
+                            
+                       
+                       
+

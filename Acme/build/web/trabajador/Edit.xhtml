@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.EditTrabajadorTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.EditTrabajadorLabel_idTrabajador}" for="idTrabajador" />
+                    <h:inputText id="idTrabajador" value="#{trabajadorController.selected.idTrabajador}" title="#{bundle.EditTrabajadorTitle_idTrabajador}" required="true" requiredMessage="#{bundle.EditTrabajadorRequiredMessage_idTrabajador}"/>
+                    <h:outputLabel value="#{bundle.EditTrabajadorLabel_turnotrabajador}" for="turnotrabajador" />
+                    <h:inputText id="turnotrabajador" value="#{trabajadorController.selected.turnotrabajador}" title="#{bundle.EditTrabajadorTitle_turnotrabajador}" required="true" requiredMessage="#{bundle.EditTrabajadorRequiredMessage_turnotrabajador}"/>
+                </h:panelGrid>
+                <h:commandLink action="#{trabajadorController.update}" value="#{bundle.EditTrabajadorSaveLink}"/>
+                <br />
+                <br />
+                <h:link outcome="View" value="#{bundle.EditTrabajadorViewLink}"/>
+                <br />
+                <h:commandLink action="#{trabajadorController.prepareList}" value="#{bundle.EditTrabajadorShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.EditTrabajadorIndexLink}" />
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

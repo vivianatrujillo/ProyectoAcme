@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.EditDiagnosticoTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.EditDiagnosticoLabel_idDiagnostico}" for="idDiagnostico" />
+                    <h:inputText id="idDiagnostico" value="#{diagnosticoController.selected.idDiagnostico}" title="#{bundle.EditDiagnosticoTitle_idDiagnostico}" required="true" requiredMessage="#{bundle.EditDiagnosticoRequiredMessage_idDiagnostico}"/>
+                    <h:outputLabel value="#{bundle.EditDiagnosticoLabel_observaciones}" for="observaciones" />
+                    <h:inputText id="observaciones" value="#{diagnosticoController.selected.observaciones}" title="#{bundle.EditDiagnosticoTitle_observaciones}" required="true" requiredMessage="#{bundle.EditDiagnosticoRequiredMessage_observaciones}"/>
+                </h:panelGrid>
+                <h:commandLink action="#{diagnosticoController.update}" value="#{bundle.EditDiagnosticoSaveLink}"/>
+                <br />
+                <br />
+                <h:link outcome="View" value="#{bundle.EditDiagnosticoViewLink}"/>
+                <br />
+                <h:commandLink action="#{diagnosticoController.prepareList}" value="#{bundle.EditDiagnosticoShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.EditDiagnosticoIndexLink}" />
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>
